@@ -1,39 +1,87 @@
 #include <iostream>
 #include <string>
-#include <vector>
-
+#include <cctype>
 using namespace std;
 
+int main() {
+    cout << "                                                    COIN FLIP" << endl;
+    cout << "                                PlayerA and PlayerB flip the coin game, a total of [10] coins" << endl;
+    cout << "                                PlayerA flips first, PlayerB flips back, in turn, each time you can flip [1-3] coins" << endl;
+    cout << "                                Who filp the [10th] coin who is the winner" << endl;
 
-void main()
-{
-	int sum_total = 10;
+    int sum_total = 10;
+    string str_num;
+    player[0] = "Player_A";
+    player[1] = "Player_B";
+    int select = 0, n = 0, round_counter = 0, round = 1;
+    int len[3] = { 4,4,4 };
 
-	cout << "PlayerA和PlayerB翻硬币比赛，共10枚硬币，PlayerA先翻，PlayerB后翻，依次进行，每次可以翻开1－3枚，翻开第10枚硬币者获胜" << endl;
-	vector<string> player(2);
-	player[0] = "PlayerA";
-	player[1] = "PlayerB";
-	int select = 0, n = 0;
+    for (int i = 0; i < 10; i++) {
+        coin.push_back(1);
+    }
 
-	while (sum_total)
-	{
-		cout << "现在有" << sum_total << "枚。请" << player[n] << "  选择翻几枚（1－3）：";
-		cin >> select;
-		if (select > 3 || select < 1)
-		{
-			cout << "只能选择1－3枚，请重新选择" << endl;
-			continue;
-		}
-		if (select > sum_total)
-		{
-			cout << "还剩余" << sum_total << "枚，" << "不能选择比剩余硬币数多的枚数，请重新选择" << endl;
-			continue;
-		}
-		sum_total -= select;
-		if (sum_total == 0)break;
-		n++;
-		if (n > 1)n = 0;
-	}
-	cout << player[n] << " is winner! " << endl;
-	system("pause");
+    while (sum_total)
+    {
+
+        if (round_counter % 2 == 0 && round_counter != 0) {//round calculator
+            round++;
+            cout << endl;
+            cout << endl;
+        }
+
+        cout << "                                         " << " " << " " << " " << " " << " " << " " << " " << " " << " " << " " << " " << " " << " " << " " << "Ronud_" << round << endl;
+        cout << "                                     " << "     There are" << "[" << sum_total << "]" << "coins are facing up." << endl;
+        cout << "                                     " << " " << " " << " " << " " << " " << " " << " " << "-----------------------------" << endl;
+        cout << "                                     " << " " << " " << " " << " " << " " << " " << " ";
+        for (int i = 0; i < 10; i++) {
+            if (coin[i] == 1)
+                cout << "H" << "  ";
+            if (coin[i] == 0)
+                cout << "T" << "  ";
+        }
+        cout << endl;
+        cout << "                                     " << " " << " " << " " << " " << " " << " " << " " << "1  2  3  4  5  6  7  8  9  10" << endl;
+        cout << endl;
+        cout << "                                           " << " " << " " << " " << " " << " " << " " << " " << " " << " " << " " << " " << " " << "[" << player[n] << "]" << endl;
+        cout << "                                    " << "       Please choose how many to turn (1-3)：";
+
+        try {
+
+            if (select > sum_total) {
+                cout << "                                                Still left" << "[" << sum_total << "]" << "coin，" << endl;
+                error("                                                Cannot select more coins than the remaining coins, please select again");
+                select = 0;
+                cout << endl;
+                continue;
+            }
+            cout << "                                           Choose which coin to flip:";
+            
+
+            int coin_size = coin_num.size();
+            for (int i = 0; i < coin_size; i++) {
+                len[i] = coin_num[i];
+            }
+            coin = coin_flip(coin, len, coin_size);
+
+
+            coin_num.clear();
+            int coin_cout_p = 0;
+            for (int i = 0; i < 10; i++) {
+                if (coin[i] == 1)
+                    coin_cout_p++;
+            }
+
+            sum_total = coin_cout_p;//add them
+            if (sum_total == 0)
+                break;
+            n++;
+            if (n > 1)n = 0;
+            round_counter++;
+
+        }
+
+    }
+
+    cout << "                                            " << player[n] << " Win!!! " << endl;
+    system("pause");
 }
