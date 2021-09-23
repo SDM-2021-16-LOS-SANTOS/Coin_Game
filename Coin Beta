@@ -60,25 +60,6 @@ int main() {
         if (round_counter % 2 == 0 && round_counter != 0) {//round calculator
             round++;
             cout << endl;
-            cout << endl;
-            cout << endl;
-            cout << endl;
-            cout << endl;
-            cout << endl;
-            cout << endl;
-            cout << endl;
-            cout << endl;
-            cout << endl;
-            cout << endl;
-            cout << endl;
-            cout << endl;
-            cout << endl;
-            cout << endl;
-            cout << endl;
-            cout << endl;
-            cout << endl;
-            cout << endl;
-            cout << endl;
         }
 
         cout << "                                         " << " " << " " << " " << " " << " " << " " << " " << " " << " " << " " << " " << " " << " " << " " << "Ronud_" << round << endl;
