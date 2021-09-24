@@ -1,0 +1,50 @@
+1. Current situation
+  
+    We plan to write a coin game. It is an easy and interesting game. It belongs to take-away game. 
+    This game can exercise your thinking and make you be thoughtful.
+    
+
+2. Dream system
+    
+    It is a puzzle game. Players first need to make global thinking and simulate the game situation step by step in the brain.
+    Think active in thinking and have fun in victory. 
+    This program can also be applied to computer logic operations, children intellectual development, medical puzzle rehabilitation treatment, etc.
+    
+    
+3. Current processes
+
+    Processes:  select 2 players ->  Throw 1-3 coins -> Record the number of coins left and the number of rounds
+    -> The player who threw in the 10th coins firstly win
+
+
+4. Required processes
+
+
+
+
+5. Law, rules, standards
+
+    The winner needs to throw in the 10th coin firstly, absolutely fair, and no deception.
+
+
+6. Requirement list
+
+    There are 10 coins in total. 
+    Player A and Player B flip 1-3 coins.
+    Player A flips first, Player B flip back, round and round.
+    Record the number of coins left and the number of rounds.
+    Player who threw in the 10th coin win.
+
+
+7. Dictionary
+
+
+
+
+
+8. Use case
+    
+    The program can also be applied to computer logic operation, child intellectual development, medical puzzle rehabilitation treatment and many other aspects.
+    
+    
+    
