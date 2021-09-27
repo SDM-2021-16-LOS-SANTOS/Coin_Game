@@ -188,7 +188,22 @@ int main() {
             if (n > 1)n = 0;
             round_counter++;
 //Next step.Do [q][r] loop and tryback on bugs.Then add UI on the whole pro.
-           
-
+           string quit; 
+         cout << endl; 
+         cout << " _______________________________________________" << endl; 
+         cout << " Quit press [q] " << endl; 
+         cout << " Rules press [r] " << endl; 
+         cout << " Press [Enter any word] to continue" << endl; 
+         cout << " _______________________________________________" << endl; 
+         cout << endl; 
+         if (quit[0] == 'q') 
+         return 0; 
+         else if (quit[0] == 'r') {
+         cout << " PlayerA and PlayerB flip the coin game, a total of {10} coins" << endl; 
+         cout << " PlayerA flips first, PlayerB flips after, in turn, each time you can flip {1-3} coins" << endl; 
+         cout << " Player who filp the 10th coin is the winner" << endl; 
+      } 
+  //Next step error headlder 
+    }
 
 }
