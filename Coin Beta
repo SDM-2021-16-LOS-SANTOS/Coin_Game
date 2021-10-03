@@ -258,7 +258,33 @@ int main(){
 
                     else
                         continue;
+catch (exception& e) {//错误捕捉
+            cout << endl;
+            cout << endl;
+            coin_num.clear();
+            for (int i = 0; i < coin_num.size(); i++)
+                len[i] = 4;
+            cout << "                                          " << e.what() << endl;
+            if (round_counter > 0 && round > 1 && round_counter % 2 == 0)//当执行一次报错时，防止回合计数器再加一次
+                round_counter--;
+            cout << endl;
+            cout << endl;
+            continue;
+        }
+        cout << endl;
+        cout << endl;
+        cout << "                                _______________________________________________" << endl;
 
+
+    }
+
+    cout << "                                            " << player[n] << " is Winner!!!!!!!!!!!!!!!!! " << endl;
+    system("pause");
+}//running on bugs hahaha
+int parseInt(string str) {
+    int n = atoi(str.c_str());
+    return n;
+}
          }
 
-       //ADD tryback;
+       //ADD isNum function ;
