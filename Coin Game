@@ -10,7 +10,7 @@ using namespace std;
 vector<int> coin_flip(vector<int> x, int y[3], int b) {
 
     for (int i = 0; i < b; i++) {//put the array to "coin"
-        if (x[y[i] - 1] == 1) //
+        if (x[y[i] - 1] == 1) //1 is the front side 0 is the back side
             x[y[i] - 1] = 0;
         else if (x[y[i] - 1] == 0) {
             if (x[y[b - 1] - 1] == 0 && b > 1) {//when the largest number is "0", it cannot be turned
@@ -93,14 +93,14 @@ int main() {
 
         try {
 
-            /*
+            
             cin >> input_choose;
             cout << endl;
             int judge = 0;
-            if (!isdigit(input_choose)) {
+            if (!isdigit(input_choose)) {//Determine whether it is a number
                 judge = 1;
             }
-            */
+            
             string str;
             cin >> str;
             if (!isNum(str)) {
@@ -217,13 +217,13 @@ int main() {
 
             int coin_size = coin_num.size();
             for (int i = 0; i < coin_size; i++) {
-                len[i] = coin_num[i];
+                len[i] = coin_num[i];//Use an array to store each vector
             }
             coin = coin_flip(coin, len, coin_size);
 
             coin_num.clear();
             int coin_cout_p = 0;
-            for (int i = 0; i < 10; i++) { 
+            for (int i = 0; i < 10; i++) { //Judgement of head and tail
                 if (coin[i] == 1)
                     coin_cout_p++;
             }
@@ -267,7 +267,7 @@ int main() {
         }
 
 
-        catch (exception& e) {
+        catch (exception& e) {//Error catch
 
             cout << endl;
             cout << endl;
@@ -275,7 +275,7 @@ int main() {
             for (int i = 0; i < coin_num.size(); i++)
                 len[i] = 4;
             cout << "                                          " << e.what() << endl;
-            if (round_counter > 0 && round > 1 && round_counter % 2 == 0)// in case calculator do it again
+            if (round_counter > 0 && round > 1 && round_counter % 2 == 0)//When an error is reported during execution, prevent the round counter from increasing again
                 round_counter--;
             cout << endl;
             cout << endl;
