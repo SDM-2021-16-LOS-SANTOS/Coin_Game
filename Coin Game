@@ -7,7 +7,7 @@
 using namespace std;
 
 
-vector<int> coin_flip(vector<int> x, int y[3], int b) {
+vector<int> coin_flip(vector<int> x, int y[3], int b) {//
 
     for (int i = 0; i < b; i++) {//put the array to "coin"
         if (x[y[i] - 1] == 1) //1 is the front side 0 is the back side
